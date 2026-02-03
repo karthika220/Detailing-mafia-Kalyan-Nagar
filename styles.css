@@ -166,7 +166,7 @@ h1, h2, h3 {
 
 .hero h1,
 .hero-left h1 {
-    font-size: 50px;
+    font-size: 48px;
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 14px;
@@ -1111,28 +1111,44 @@ h1, h2, h3 {
     /* ============================= */
     /* Reviews Section */
     /* ============================= */
-    .google-reviews,
+
     .reviews {
         padding: 60px 0;
     }
-    
+
+    /* Native swipe container */
+    .reviews-viewport {
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+    }
+
+    /* Track layout only (NO !important) */
+    .reviews-track {
+        display: flex;
+        gap: 16px;
+    }
+
+    /* One card per view */
     .review-card {
-        flex: 0 0 100%;
-        max-width: 100%;
+        flex: 0 0 92%;
+        max-width: 92%;
+        scroll-snap-align: center;
     }
-    
-    .review-nav.prev {
-        left: 0;
+
+    /* Hide arrows on mobile */
+    .review-nav {
+        display: none;
     }
-    
-    .review-nav.next {
-        right: 0;
+
+    /* Hide scrollbar */
+    .reviews-viewport::-webkit-scrollbar {
+        display: none;
     }
-    
-    .reviews-slider {
-        padding: 0 20px;
-    }
-    
+
+
     /* ============================= */
     /* Location Section - Improved Mobile Layout */
     /* ============================= */
